@@ -148,20 +148,12 @@ export class DetailsPage implements OnInit {
     });
   }
 
-  gotoCreditCard() {
-    this.router.navigate(['/credit-card']);
-  }
-
-  gotoTicket() {
-    this.router.navigate(['/nominas']);
-  }
-
   goToMyChild() {
     this.router.navigate(['/my-child']);
   }
 
   goToActivityList() {
-    this.router.navigate(['/activity-list']);
+    this.router.navigate(['activity-list']);
   }
 
   goToConversation() {

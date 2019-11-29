@@ -17,14 +17,12 @@
     <ion-label>
       <ion-icon src="assets/icon/icon-name.svg"></ion-icon>
     </ion-label>
-    <ion-input type="text" [(ngModel)]="fullName" (keyup.enter)="goToPhone()"
-      placeholder="Full Name"></ion-input>
+    <ion-input type="text" [(ngModel)]="fullName" placeholder="Full Name"></ion-input>
   </ion-item>
 
 
 </ion-content>
 
 <ion-footer no-border>
-  <ion-button expand="full" class="button-green" color="button_color"
-    (click)="goToPhone()">NEXT</ion-button>
+  <ion-button expand="full" class="button-green" color="button_color" (click)="goToPhone()">NEXT</ion-button>
 </ion-footer>

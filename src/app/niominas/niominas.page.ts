@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-niominas',
-  templateUrl: './nominas.page.html',
-  styleUrls: ['./nominas.page.scss'],
+  templateUrl: './niominas.page.html',
+  styleUrls: ['./niominas.page.scss'],
 })
-export class NominasPage implements OnInit {
+export class NiominasPage implements OnInit {
 
   constructor() { }
 

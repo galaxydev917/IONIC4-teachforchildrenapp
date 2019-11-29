@@ -42,8 +42,7 @@ export class HomePage {
               //do nothing. new user registeration auto login triggered this observable;
             } else {
               //existing user logged in
-              this.router.navigate(['/tabs']);
-//              this.router.navigate(['/my-child']);
+              this.router.navigate(['/details']);
             }
           });
         } else {

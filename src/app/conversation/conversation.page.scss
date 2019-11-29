@@ -147,8 +147,7 @@ ion-back-button {
 }
 
 .inputContainer {
-  width: 85%;
-  display: inline-block;
+  width: 90%;
 }
 
 // .inputMessage {
@@ -167,51 +166,4 @@ ion-back-button {
 
 .send-button-parent {
   padding: 0 6px 0 8px;
-  display: inline-block;
-  width: 20px;
-}
-
-.footer_tab {
-  justify-content: center;
-  text-align: center;
-}
-
-.footer_tab ion-icon {
-  font-size: 20px;
-}
-
-.child-face {
-  background: url(/assets/icon/child-face.svg) center center / contain no-repeat;
-}
-
-.football {
-  background: url(/assets/icon/football.svg) center center / contain no-repeat;
-}
-
-.footer-message {
-  background: url(/assets/icon/footer-message-green.svg) center center / contain no-repeat;
-}
-
-.icon-User {
-  background: url(/assets/icon/footer-User.svg) center center / contain no-repeat;
-}
-
-.footer-icon {
-  margin: 0;
-  padding: 0;
-  width: 18px;
-  height: 20px;
-  display: block;
-  margin: 0 auto;
-}
-
-.footer_tab small {
-  display: none;
-  margin-top: 2px;
-}
-
-.footer_tab .active small {
-  display: block;
-  color: #8DC53F;
-
 }

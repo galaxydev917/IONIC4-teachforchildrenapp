@@ -74,10 +74,3 @@ export interface School {
   director?: string;
   name?: string;
 }
-
-export interface Card {
-  id?: string;
-  cardnumber?: number;
-  cvv?: number;
-  expirydate?: string;
-}

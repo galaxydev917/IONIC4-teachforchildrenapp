@@ -46,10 +46,10 @@ export class PasswordModalPage implements OnInit {
       this.loadingService.present();
       this.existingUser.password = this.password;
       this.auth.signIn(this.existingUser.email, this.existingUser.password).then((data) => {
-        this.router.navigate(['/tabs']).then(() => {
-          if (this.loadingService.isLoading)
-            this.loadingService.dismiss();
-        })
+        // this.router.navigate(['/child']).then(() => {
+        //   if (this.loadingService.isLoading)
+        //     this.loadingService.dismiss();
+        // })
         console.log('sign in ok return then promise');
         console.log(data);
 

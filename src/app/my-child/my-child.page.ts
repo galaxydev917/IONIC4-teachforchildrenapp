@@ -91,7 +91,7 @@ export class MyChildPage implements OnInit {
   }
 
   goToActivityList() {
-    this.router.navigate(['/activity-list']);
+    this.router.navigate(['activity-list']);
   }
 
   goToAddChild() {

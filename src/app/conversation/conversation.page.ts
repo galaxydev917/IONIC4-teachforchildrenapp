@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { User, Message } from 'src/interfaces';
@@ -19,11 +19,9 @@ export class ConversationPage implements OnInit {
   public inp_text: string = '';
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute,
     private auth: AuthenticationService,
     private db: AngularFirestore,
-  ) {
-  }
+  ) { }
 
   ionViewWillEnter() {
     this.inp_text = '';
@@ -33,9 +31,7 @@ export class ConversationPage implements OnInit {
     });
 
     //get all messages
-    this.db.collection('parents').doc(this.auth.getUid())
-    .collection('messages', q => q.orderBy('timestamp', 'asc'))
-    .snapshotChanges().subscribe(
+    this.db.collection('parents').doc(this.auth.getUid()).collection('messages', q => q.orderBy('timestamp', 'asc')).snapshotChanges().subscribe(
       serverItems => {
         this.messages = [];
         serverItems.forEach(item => {
@@ -47,9 +43,6 @@ export class ConversationPage implements OnInit {
 
         });
       });
-    
-      // var newMessage = this.activatedRoute.snapshot.params['data'].message;
-      // this.messages.push(newMessage);
   }
 
   sendMsg() {
@@ -58,8 +51,7 @@ export class ConversationPage implements OnInit {
     newMessage.text = this.inp_text;
     newMessage.timestamp = new Date().toISOString();
     newMessage.senderUid = this.parent.uid;
-    this.db.collection('parents').doc(this.auth.getUid())
-    .collection('messages').add(newMessage);
+    this.db.collection('parents').doc(this.auth.getUid()).collection('messages').add(newMessage);
     this.inp_text = '';
   }
 
@@ -75,7 +67,7 @@ export class ConversationPage implements OnInit {
   }
 
   goToActivityList() {
-    this.router.navigate(['/activity-list']);
+    this.router.navigate(['activity-list']);
   }
 
 }

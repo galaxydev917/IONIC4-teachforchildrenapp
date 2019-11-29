@@ -30,11 +30,10 @@
     <ion-label>
       <ion-icon src="assets/icon/icon-email.svg"></ion-icon>
     </ion-label>
-    <ion-input type="text" value="" (keyup.enter)="checkEmail()" [(ngModel)]="email"></ion-input>
+    <ion-input type="text" value="" [(ngModel)]="email"></ion-input>
   </ion-item>
 </ion-content>
 
 <ion-footer no-border>
-  <ion-button expand="full" class="button-green" color="button_color"
-   (click)="checkEmail()">NEXT</ion-button>
+  <ion-button expand="full" class="button-green" color="button_color" (click)="checkEmail()">NEXT</ion-button>
 </ion-footer>

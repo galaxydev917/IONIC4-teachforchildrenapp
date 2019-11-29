@@ -1,3 +1,18 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>conversation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content> -->
+<!--
+  Generated template for the ConversationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
   <ion-toolbar mode="ios">
     <ion-buttons slot="start">
@@ -12,26 +27,43 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <div class="container">
     <ul class="conversation">
       <li *ngFor="let m of messages">
-        <div *ngIf="m.byAdmin == false" class="sent">
+        <div *ngIf="m.senderUid == parent.uid" class="sent">
           <div><span>{{m.text}}</span></div>
         </div>
-        <p *ngIf="m.byAdmin == false" class=" time">{{m.timestamp | date:'dd/MM/yyyy HH:mm' }}</p>
-        <div *ngIf="m.byAdmin == true" class=" replay text-left">
+        <p *ngIf="m.senderUid == parent.uid" class=" time">{{m.timestamp | date:'dd/MM/yyyy HH:mm' }}</p>
+        <div *ngIf="m.senderUid != parent.uid" class=" replay text-left">
           <div><span>{{m.text}}</span></div>
         </div>
-        <p *ngIf="m.byAdmin == true" class="time text-left">{{m.timestamp | date:'dd/MM/yyyy HH:mm'}}</p>
+        <p *ngIf="m.senderUid != parent.uid" class="time text-left">{{m.timestamp | date:'dd/MM/yyyy HH:mm'}}</p>
       </li>
+      <!-- <li>
+        <div class="sent">
+          <div><span>How are you?</span></div>
+        </div>
+        <p class="time">2:15 PM</p>
+      </li>
+      <li>
+        <div class="replay text-left">
+          <div><span>I am Great!</span></div>
+          <div><span>I am Great!</span></div>
+        </div>
+        <p class="time text-left">2:15 PM</p>
+      </li> -->
+
     </ul>
   </div>
 
 </ion-content>
 
-<ion-footer no-border>
-    <div>
+
+<ion-footer>
+  <ion-toolbar color="custom_header">
+
+    <div class="containerFooter">
       <div class="inputContainer">
         <ion-input type="text" placeholder="Type a message" [(ngModel)]="inp_text" autofocus="true" padding-start>
         </ion-input>
@@ -42,28 +74,8 @@
         </ion-button>
       </div>
     </div>
-  <ion-toolbar transparent>
-    <ion-grid>
-      <ion-row class="footer_tab">
-        <ion-col class="" (click)="goToMyChild()">
-          <i class="footer-icon child-face"></i>
-          <small> My Kids </small>
-        </ion-col>
-        <ion-col (click)="goToActivityList()">
-          <i class="football footer-icon"></i>
-          <small> Activity</small>
-        </ion-col>
 
-        <ion-col class="active">
-          <i class="footer-message footer-icon"></i>
-          <small> Chat</small>
-        </ion-col>
+    <!-- <i slot="end" class="send_icon"></i> -->
 
-        <ion-col (click)="goToDetails()">
-          <i class="icon-User footer-icon"></i>
-          <small> Profile </small>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
   </ion-toolbar>
 </ion-footer>

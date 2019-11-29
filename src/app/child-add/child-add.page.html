@@ -60,6 +60,17 @@
     <ion-row>
       <ion-col size="12">
         <ion-list style='margin-bottom: 0px;'>
+          <!-- <ion-radio-group [(ngModel)]="child.gender">
+            <ion-item>
+              <ion-label>Female</ion-label>
+              <ion-radio slot="start" value="Female" mode="md"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Male</ion-label>
+              <ion-radio slot="start" value="Male" mode="md"></ion-radio>
+            </ion-item>
+          </ion-radio-group> -->
           <ion-item lines="none" class="input_box">
             <ion-select [(ngModel)]="child.gender" name="selectGender" multiple="false" placeholder="Select gender..."
               [selectedText]="child.gender">
@@ -71,6 +82,7 @@
           </ion-item>
         </ion-list>
       </ion-col>
+
     </ion-row>
 
 

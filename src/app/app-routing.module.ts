@@ -5,13 +5,14 @@ import { AuthGuard } from './services/auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomePageModule) },
-  { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule', canActivate: [AuthGuard] },
   { path: 'activity-category/:categoryId', loadChildren: './activity-category/activity-category.module#ActivityCategoryPageModule', canActivate: [AuthGuard] },
   { path: 'activity-details/:activityId', loadChildren: './activity-details/activity-details.module#ActivityDetailsPageModule', canActivate: [AuthGuard] },
   { path: 'activity-list', loadChildren: './activity-list/activity-list.module#ActivityListPageModule', canActivate: [AuthGuard] },
   { path: 'add-card', loadChildren: './add-card/add-card.module#AddCardPageModule', canActivate: [AuthGuard] },
   { path: 'child', loadChildren: './child/child.module#ChildPageModule', canActivate: [AuthGuard] },
-  { path: 'child-add/:returnUrl', loadChildren: './child-add/child-add.module#ChildAddPageModule', canActivate: [AuthGuard] },
+  {
+    path: 'child-add/:returnUrl', loadChildren: './child-add/child-add.module#ChildAddPageModule', canActivate: [AuthGuard]
+  },
   { path: 'configuration', loadChildren: './configuration/configuration.module#ConfigurationPageModule', canActivate: [AuthGuard] },
   { path: 'conversation', loadChildren: './conversation/conversation.module#ConversationPageModule', canActivate: [AuthGuard] },
   { path: 'credit-card', loadChildren: './credit-card/credit-card.module#CreditCardPageModule', canActivate: [AuthGuard] },
@@ -20,7 +21,7 @@ const routes: Routes = [
   { path: 'menu-modal', loadChildren: './menu-modal/menu-modal.module#MenuModalPageModule', canActivate: [AuthGuard] },
   { path: 'my-child', loadChildren: './my-child/my-child.module#MyChildPageModule', canActivate: [AuthGuard] },
   { path: 'name-modal', loadChildren: './name-modal/name-modal.module#NameModalPageModule' },
-  { path: 'nominas', loadChildren: './nominas/nominas.module#NominasPageModule', canActivate: [AuthGuard] },
+  { path: 'niominas', loadChildren: './niominas/niominas.module#NiominasPageModule', canActivate: [AuthGuard] },
   { path: 'password-modal', loadChildren: './password-modal/password-modal.module#PasswordModalPageModule' },
   { path: 'phone-modal', loadChildren: './phone-modal/phone-modal.module#PhoneModalPageModule' },
   { path: 'reports', loadChildren: './reports/reports.module#ReportsPageModule', canActivate: [AuthGuard] },

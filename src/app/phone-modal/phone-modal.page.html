@@ -18,13 +18,12 @@
     <ion-label>
       <ion-icon src="assets/icon/icon-phone.svg"></ion-icon>
     </ion-label>
-    <ion-input type="number" (keyup.enter)="goToChildsPage()" [(ngModel)]="phone"></ion-input>
+    <ion-input type="number" [(ngModel)]="phone"></ion-input>
   </ion-item>
 
 
 </ion-content>
 
 <ion-footer no-border>
-  <ion-button expand="full" class="button-green" color="button_color"
-    (click)="goToChildsPage()">NEXT</ion-button>
+  <ion-button expand="full" class="button-green" color="button_color" (click)="goToChildsPage()">NEXT</ion-button>
 </ion-footer>

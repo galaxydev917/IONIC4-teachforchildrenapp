@@ -102,6 +102,7 @@ export class ActivityCategoryPage implements OnInit {
   }
 
   async enrollToActivityStoreFirebase(child, activity) {
+    console.log("aaaaaaaaaaa", activity);
     this.db.collection('parents').doc(this.auth.getUid()).collection('childrens').doc(child.id).set({
       activitiesEnrolled: child.activitiesEnrolled
     }, { merge: true });
@@ -116,8 +117,8 @@ export class ActivityCategoryPage implements OnInit {
   }
 
   async enrollToActivity(activity) {
-
-    if (this.myChildren.length > 1) {
+    console.log("aaaaaaaaaaaaaa", activity);
+    if (this.myChildren.length > 0) {
       //check if have more than one child on this activity school.
       // activity.schoolId
       let childsOnThisSchool: Child[] = [];
@@ -130,8 +131,8 @@ export class ActivityCategoryPage implements OnInit {
       });
 
       var shouldUpdateToFirebase = false;
-
-      if (childsOnThisSchool.length > 1) {
+console.log("childsOnThisSchool.length", childsOnThisSchool.length);
+      if (childsOnThisSchool.length > 0) {
         //TO DO select one of the kids
         const modal = await this.modalCtrl.create({
           component: ChildSelectorPage,
@@ -224,7 +225,6 @@ export class ActivityCategoryPage implements OnInit {
         }
 
       }
-
       if (shouldUpdateToFirebase) {
         // this.db.collection('parents').doc(this.auth.getUid()).collection('childrens').doc(child.id).set({
         //   activitiesEnrolled: child.activitiesEnrolled
